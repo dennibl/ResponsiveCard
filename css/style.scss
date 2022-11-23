@@ -1,0 +1,122 @@
+@import 'general';
+
+.product-card {
+    display: flex;
+    max-width: $mobile;
+    overflow: hidden;
+    background-color: $white;
+    border-radius: .5rem;
+    margin-bottom: 2rem;
+
+}
+
+.product-img {
+    width: 50%;
+}
+
+.content {
+    $gap: 1.4rem;
+
+    @media screen and (max-width: $mobile) {
+        $gap: 1rem;
+    }
+
+    gap: $gap;
+    width: 50%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    .head {
+        display: flex;
+        flex-direction: column;
+        gap: $gap;
+
+        >p {
+            text-transform: uppercase;
+            letter-spacing: .35rem;
+            font-size: .7rem;
+
+        }
+
+        h2 {
+            font-family: $fs-second;
+            color: $darkblue;
+            font-size: 2rem;
+            line-height: 1;
+            font-weight: $bold;
+        }
+    }
+
+
+    .price {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+
+        .new-price {
+            color: $prime;
+            font-family: $fs-second;
+            font-size: 1.5rem;
+            font-weight: $bold;
+
+            @media screen and (max-width: $mobile) {
+                font-size: 2rem;
+            }
+        }
+
+        .old-price {
+            font-size: .8rem;
+        }
+    }
+
+    .add-cart {
+        text-decoration: none;
+        background-color: $prime;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        padding: .9rem 0;
+        border-radius: .5rem;
+        gap: .5rem;
+        font-size: .9rem;
+        border: none;
+        cursor: pointer;
+        transition: background-color 300ms ease;
+
+        .cart-img {
+            background-image: url('../images/icon-cart.svg');
+            height: .8rem;
+            aspect-ratio: 1/1;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        &:hover {
+            background-color: hsl(158, 35%, 30%);
+        }
+
+    }
+
+}
+
+@media screen and (max-width: $mobile) {
+    .product-card {
+        flex-direction: column;
+        max-width: 90%;
+
+    }
+
+    .product-img,
+    .content {
+        width: 100%;
+
+    }
+
+}
